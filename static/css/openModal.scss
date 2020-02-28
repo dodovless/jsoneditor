@@ -1,0 +1,97 @@
+@import '../styles.scss';
+
+.modal.modal-open {
+  h1 {
+    font-size: $font-size-large;
+    font-weight: bold;
+  }
+
+  .search-box {
+    margin-bottom: 2 * $margin;
+    display: flex;
+    align-items: center;
+
+    .label {
+      margin-right: $margin;
+    }
+
+    .search-text {
+      flex: 1;
+      font-size: $font-size;
+    }
+  }
+
+  .info {
+    color: $gray;
+    font-size: $font-size-small;
+    text-align: right;
+  }
+
+  .recent-files {
+    max-height: 250px;
+    overflow: auto;
+    border: 1px solid $light-gray;
+    border-radius: $border-radius;
+
+    .recent-file {
+      display: flex;
+      flex-direction: row;
+
+      button.open {
+        @include generic-button;
+
+        flex: 1;
+
+        margin: 0;
+        padding: $margin;
+        text-align: left;
+        background: transparent;
+
+        .updated {
+          color: $gray;
+          font-size: $font-size-small;
+          margin-top: $margin / 2;
+        }
+      }
+
+      button.remove {
+        @include generic-button;
+
+        margin: 0;
+        color: $gray;
+        background: transparent;
+
+        &:hover,
+        &:focus {
+          color: $white;
+          background: $red;
+        }
+      }
+
+      &:hover {
+        background: $button-background-color;
+
+        .open {
+          .updated {
+            color: $dark-gray;
+          }
+        }
+      }
+
+      &.deleting {
+        background: $background-gray;
+
+        .open,
+        .remove {
+          background: transparent;
+          color: $gray;
+          cursor: default;
+        }
+      }
+    }
+
+    .no-files {
+      margin: $margin;
+    }
+  }
+}

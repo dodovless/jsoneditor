@@ -1,0 +1,42 @@
+@import '../styles';
+
+.toggle {
+  white-space: nowrap;
+  overflow: auto;
+
+  button {
+    background: $white;
+    color: $black;
+    border-radius: unset;
+    border: 1px solid $light-gray;
+    border-left-width: 0;
+    padding: $margin/2 $margin*2;
+    margin: 0;
+
+    &:first-child {
+      border-bottom-left-radius: $border-radius;
+      border-top-left-radius: $border-radius;
+      border-left-width: 1px;
+    }
+
+    &:last-child {
+      border-bottom-right-radius: $border-radius;
+      border-top-right-radius: $border-radius;
+    }
+
+    &:hover {
+      background: $background-gray;
+    }
+
+    &.selected {
+      background: $theme-color-tertiary;
+      border-color: $theme-color-tertiary;
+      color: $white;
+
+      &:hover {
+        background: $theme-color-tertiary-light;
+        border-color: $theme-color-tertiary-light;
+      }
+    }
+  }
+}

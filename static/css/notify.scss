@@ -1,0 +1,114 @@
+@import "../styles.scss";
+
+.notification-list {
+  position: absolute;
+  width: 0;
+  top: -2px;
+  left: 50%;
+  z-index: 9999;
+  overflow: visible;
+
+  &.size-160 {
+    left: calc((100% - 160px - 20px) / 2);
+  }
+  &.size-300 {
+    left: calc((100% - 300px - 20px) / 2);
+  }
+
+  .notification-list-items {
+    $width: 500px;
+
+    position: absolute;
+    overflow: visible;
+    margin-left: -$width/2;
+    width: $width;
+
+    display:         flex;
+    flex-wrap:       wrap;
+    justify-content: center;
+
+    .notification {
+      display: inline-block;
+      position: relative;
+      margin: 5px 0;
+      padding: 6px 10px;
+      min-width: $width / 2; // a trick to prevent two messages fitting on one line
+
+      background-color: $yellow;
+      border-radius: 2px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      text-align: center;
+      line-height: 1.3em;
+
+      &.closable {
+        padding-right: 20px;
+      }
+
+      .close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+        display: inline-block;
+        text-align: center;
+        padding-top: 4px;
+      }
+
+      &.error {
+        background-color: $red;
+        color: $white;
+
+        .parse-error {
+          text-align: left;
+
+          pre {
+            background: rgba(255,255,255, 0.05);
+            padding: $margin / 2;
+            border-radius: $border-radius;
+            margin: $margin 0 $margin/2 0;
+          }
+        }
+
+        .close:hover {
+          color: $white;
+        }
+      }
+
+      button.action {
+        border: none;
+        background: transparent;
+        color: $red;
+        text-decoration: underline;
+        font-size: $font-size;
+        cursor: pointer;
+        display: inline;
+        padding: 0;
+        margin: 0;
+
+        &:hover,
+        &:focus {
+          color: darken($red, 5%);
+        }
+      }
+    }
+  }
+
+  @media(max-width: 600px) {
+    width: 100%;
+    left: 0;
+
+    &.size-160,
+    &.size-300 {
+      left: 0;
+    }
+
+    .notification-list-items {
+      margin-left: 0;
+      left: 20px;
+      right: 20px;
+      width: auto;
+    }
+  }
+}

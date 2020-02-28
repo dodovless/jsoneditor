@@ -1,0 +1,21 @@
+@import '../styles.scss';
+
+.modal-foreground.share {
+  width: 600px;
+}
+
+.modal.modal-share {
+  .share-contents {
+    display: flex;
+
+    .url-contents {
+      flex: 1;
+      font-size: $font-size;
+      color: $black;
+      background-color: transparent;
+      border: 1px solid $light-gray;
+      padding: $margin/2 $margin;
+      border-radius: $border-radius;
+    }
+  }
+}

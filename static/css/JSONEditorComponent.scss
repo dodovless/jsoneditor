@@ -1,0 +1,81 @@
+@import "./styles.scss";
+@import "~jsoneditor/dist/jsoneditor.css";
+
+.jsoneditor-react-container {
+  width: 100%;
+  height: 100%;
+}
+
+// override default styling of JSONEditor
+
+div.jsoneditor,
+div.jsoneditor-menu {
+  border: none;
+}
+div.jsoneditor-menu {
+  background-color: $theme-color;
+
+  button.mode-toggle {
+    $border-radius: 1px;
+    $border: 1px solid rgba(255, 255, 255, 0.2);
+
+    width: auto;
+    background: none;
+    padding: 0 5px;
+    opacity: 1;
+    margin-left: 0;
+    margin-right: 0;
+    border-top: $border;
+    border-bottom: $border;
+    border-right: none;
+    border-left: none;
+
+    &:first-child {
+      border-left: $border;
+      margin-left: 3px;
+    }
+
+    &.border-right {
+      border-right: $border;
+    }
+
+    &.selected {
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+  }
+}
+
+div.jsoneditor {
+  button {
+    border-radius: 0;
+  }
+}
+
+div.jsoneditor-navigation-bar {
+  border-bottom-color: #ebebeb; // make the border invisible
+}
+
+div.jsoneditor-statusbar {
+  border-top-color: #ebebeb; // make the border invisible
+}
+
+.jsoneditor-modal .pico-modal-header {
+  background-color: $theme-color;
+}
+
+.jsoneditor-modal .jsoneditor-jmespath-label {
+  color: $black;
+}
+
+.jsoneditor-modal .selectr-selected .selectr-tag,
+.selectr-option.active {
+  background-color: $black;
+  color: white;
+}
+
+.jsoneditor-modal .jsoneditor-button-group.jsoneditor-button-group-value-asc input.jsoneditor-button-asc,
+.jsoneditor-modal .jsoneditor-button-group.jsoneditor-button-group-value-desc input.jsoneditor-button-desc {
+  background-color: $black;
+  border-color: $black;
+}

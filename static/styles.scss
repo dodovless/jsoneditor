@@ -1,0 +1,62 @@
+
+$margin: 10px;
+//$font-family: dejavu sans, verdana, arial, sans serif;
+$font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+"Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue";
+$font-size: 11pt;
+$font-size-small: 8pt;
+$font-size-large: 14pt;
+
+$border-radius: 3px;
+
+$white: #fff;
+$background-gray: #f5f5f5;
+$very-very-light-gray: #f0f0f0;
+$very-light-gray: #e5e5e5;
+$light-gray: #dadada;
+$gray: #a8a8a8;
+$dark-gray: #707070;
+$black: #4d4d4d;
+$button-background-color: $light-gray;
+$red: #e55b62;
+$green: #82b483;
+$yellow: #f4e285;
+
+$diff-add: rgba(140, 193, 82, 0.3);
+$diff-change: rgba(255, 165, 0, 0.3);
+$diff-change-child: $diff-change;
+$diff-remove: rgba(233, 87, 63, 0.3);
+
+// scheme colors:
+// https://coolors.co/7fa360-f4a259-f4e285-5b8e7d-e55b62
+// #7fa360 bud green
+// #f4a259 sandy brown
+// #f4e285 buff
+// #5b8e7d wintergreen dream
+// #e55b62 light carmine pink
+$theme-color: #f4a259; // sandybrown
+$theme-color-light: lighten($theme-color, 10%);
+$theme-color-secondary: #7fa360;
+$theme-color-tertiary: #707070;
+$theme-color-tertiary-light: lighten($theme-color-tertiary, 10%);
+
+$overlay-background-color: rgba(0, 0, 0, 0.05);
+$drag-and-drop-background-color: rgba(255, 255, 255, 0.7);
+$drag-and-drop-selected-color: rgb(30, 144, 255);
+$drag-and-drop-selected-shadow-color: rgba(30, 144, 255, 0.7);
+
+@mixin generic-button {
+  background: $button-background-color;
+  border: none;
+  color: $black;
+  border-radius: $border-radius;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-family: $font-family;
+  font-size: $font-size;
+
+  &:hover,
+  &:focus {
+    background: lighten($button-background-color, 3%);
+  }
+}

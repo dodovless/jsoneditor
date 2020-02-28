@@ -1,0 +1,11 @@
+@import "../styles.scss";
+
+.react-tooltip-lite {
+  background: $black;
+  color: white;
+  border-radius: $border-radius;
+}
+
+.react-tooltip-lite-arrow {
+  border-color: $black;
+}

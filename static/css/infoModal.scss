@@ -1,0 +1,26 @@
+@import '../styles.scss';
+
+.modal-foreground.info {
+  width: 570px;
+}
+
+.modal.modal-info {
+  p {
+    margin: 0;
+    padding: 0;
+  }
+
+  h1 {
+    padding: 0;
+    margin: 0 0 0.5em;
+  }
+
+  h2 {
+    display: block;
+    font-size: $font-size;
+    font-weight: bold;
+    padding: 0;
+    margin-top: 2em;
+    margin-bottom: 0.3em;
+  }
+}

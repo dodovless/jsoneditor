@@ -1,0 +1,133 @@
+@import '../../styles';
+
+.modal-foreground.schema {
+  width: 800px;
+}
+
+.modal.modal-schema {
+  h1 {
+    font-size: $font-size-large;
+    font-weight: bold;
+  }
+
+  .contents {
+    min-height: 300px;
+
+    .config {
+      margin: 4*$margin 0 $margin;
+
+      &.cloud-document {
+        display: flex;
+        flex-direction: row;
+
+        .list-column {
+          flex: 2;
+          margin-right: $margin;
+        }
+
+        .preview-column {
+          flex: 3;
+        }
+
+        .recent-files {
+          height: 400px;
+          overflow: auto;
+          border: 1px solid $light-gray;
+          border-radius: $border-radius;
+          margin-top: $margin;
+          display: flex;
+          flex-direction: column;
+
+          button.recent-file {
+            @include generic-button;
+
+            margin: 0;
+            padding: $margin;
+            text-align: left;
+            background: transparent;
+            border-radius: 0;
+
+            .updated {
+              color: $gray;
+              font-size: $font-size-small;
+              margin-top: $margin / 2;
+            }
+
+            &:hover {
+              background: $button-background-color;
+
+              .updated {
+                color: $dark-gray;
+              }
+            }
+
+            &.selected {
+              background: $theme-color-tertiary;
+              color: $white;
+
+              .updated {
+                color: $light-gray;
+              }
+
+              &:hover {
+                background: $theme-color-tertiary-light;
+                color: $white;
+              }
+            }
+          }
+
+          .no-files {
+            margin: $margin;
+          }
+        }
+      }
+
+
+      &.config-jsoneditor {
+        border-bottom: 1px solid $light-gray;
+
+        .jsoneditor-react-container {
+          height: 400px;
+        }
+      }
+
+      .schema-url-preview,
+      .schema-panel-preview {
+        $height: 300px;
+        height: $height;
+        overflow: auto;
+        border: 1px solid $light-gray;
+        box-sizing: border-box;
+        border-radius: $border-radius;
+
+        .info {
+          color: $gray;
+          width: 100%;
+          text-align: center;
+          padding-top: 0.45 * $height;
+        }
+      }
+
+      .error {
+        color: $red;
+      }
+    }
+
+    button.fix-panel {
+      @include generic-button;
+    }
+
+    .toggle {
+      display: flex;
+      width: 100%;
+
+      button {
+        flex: 1;
+      }
+    }
+  }
+
+  .modal-action-menu {
+    padding-top: $margin;
+  }
+}

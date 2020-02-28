@@ -1,0 +1,93 @@
+@import "./styles.scss";
+
+.app {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: $background-gray;
+
+  .body {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+
+    // TODO: figure out why the margin right and bottom is 1px less
+    $marginPlus1: $margin + 1px;
+    $marginPlus2: $margin + 2px;
+    padding: $margin $marginPlus2 $marginPlus1 $margin;
+
+    .contents-panel {
+      flex: 1;
+      display: flex;
+      height: 100%;
+      box-sizing: border-box;
+
+      .left-panel,
+      .right-panel {
+        flex: 1;
+        height: 100%;
+        background: $white;
+        overflow: hidden;
+        outline: 1px solid #f0f0f0;
+      }
+
+      .left-panel {
+        margin-right: $margin;
+      }
+
+      .right-panel {
+        margin-left: $margin;
+      }
+
+      .center-panel {
+        height: 100%;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+
+        .empty-space-top {
+          flex: 1;
+        }
+
+        .draggable-splitter {
+          flex: 4;
+          cursor: col-resize;
+          border-radius: $border-radius;
+          color: $gray;
+          display: inline-flex; /* make element size relative to content */
+          align-items: center;
+          font-size: 24px;
+
+          .draggable-splitter-icon {
+            width: 100%;
+            text-align: center;
+          }
+
+          &:hover {
+            background: rgba(0, 0, 0, 0.02);
+            color: $dark-gray;
+          }
+        }
+
+        .actions {
+          display: flex;
+          flex-direction: column;
+
+          button {
+            @include generic-button;
+
+            margin-bottom: $margin;
+          }
+        }
+      }
+    }
+
+    .ad-panel {
+      margin: 0 0 0 $margin;
+    }
+  }
+}

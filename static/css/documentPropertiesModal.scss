@@ -1,0 +1,22 @@
+@import '../styles.scss';
+
+.modal.modal-document-properties {
+  table.properties {
+    border-collapse: collapse;
+
+    th, td {
+      padding: $margin/2 0;
+      vertical-align: top;
+    }
+
+    th {
+      color: $gray;
+      font-weight: normal;
+      text-align: left;
+    }
+
+    td {
+      padding-left: 2*$margin;
+    }
+  }
+}

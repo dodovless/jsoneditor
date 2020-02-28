@@ -1,0 +1,20 @@
+@import '../../styles.scss';
+
+.cloud-document-schema-preview {
+  .preview {
+    margin-top: $margin;
+    border: 1px solid $light-gray;
+    height: 400px;
+    border-radius: $border-radius;
+
+    .loading,
+    .error,
+    .info {
+      margin: $margin;
+    }
+
+    .info {
+      color: $gray;
+    }
+  }
+}
