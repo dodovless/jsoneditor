@@ -3611,9 +3611,7 @@
                             }()
                         }, t, {
                             diff: d && d.diffRight
-                        })))), o.a.createElement("div", {
-                            className: "ad-panel"
-                        }, o.a.createElement(g, null)))
+                        })))))
                     }))
                 })))
             }), null), document.getElementById("root")), "serviceWorker" in navigator && navigator.serviceWorker.ready.then((function(e) {
